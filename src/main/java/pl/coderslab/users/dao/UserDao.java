@@ -1,6 +1,8 @@
-package pl.coderslab.users;
+package pl.coderslab.users.dao;
 
 import org.mindrot.jbcrypt.BCrypt;
+import pl.coderslab.users.model.User;
+import pl.coderslab.users.utils.DbUtil;
 
 import java.sql.*;
 import java.util.Arrays;
@@ -11,6 +13,7 @@ public class UserDao {
     private static final String UPDATE_USER_QUERY = "UPADTE users SET username = ?, emial = ?, password = ? where id = ?";
     private static final String DELETE_USER_QUERY = "DELETE  FROM users WHERE id = ?";
     private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM users";
+
     public User creat (User user) {
         try(Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);

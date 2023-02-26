@@ -1,4 +1,4 @@
-package pl.coderslab.users;
+package pl.coderslab.users.model;
 
 public class User {
     private int id;

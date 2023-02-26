@@ -1,4 +1,6 @@
-package pl.coderslab.users;
+package pl.coderslab.users.servlet;
+import pl.coderslab.users.dao.UserDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

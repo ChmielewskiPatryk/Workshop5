@@ -131,20 +131,24 @@
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
                 <div align="center">
-                    <table border="1" cellpadding="5">
-                        <caption><h2>List of users</h2></caption>
+                    <table class="table">
+                        <h1>List of users</h1>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Action</th>
                         </tr>
-                        <c:forEach var="user" items="${listUsers.rows}">
+                        <c:forEach var="user" items="${users}">
                             <tr>
                                 <td><c:out value="${user.id}" /></td>
-                                <td><c:out value="${user.name}" /></td>
+                                <td><c:out value="${user.userName}" /></td>
                                 <td><c:out value="${user.email}" /></td>
-                                <td>Delete Edit Show</td>
+                                <td>
+                                    <a href='<c:url value="/user/delete?id=${user.id}"/>'>Delete</a>
+                                    <a href='<c:url value="/user/edit?id=${user.id}"/>'>Edit</a>
+                                    <a href='<c:url value="/user/show?id=${user.id}"/>'>Show</a>
+                                </td>
                             </tr>
                         </c:forEach>
                     </table>
