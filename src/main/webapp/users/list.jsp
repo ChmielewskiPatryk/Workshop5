@@ -130,7 +130,25 @@
                     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
-
+                <div align="center">
+                    <table border="1" cellpadding="5">
+                        <caption><h2>List of users</h2></caption>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                        <c:forEach var="user" items="${listUsers.rows}">
+                            <tr>
+                                <td><c:out value="${user.id}" /></td>
+                                <td><c:out value="${user.name}" /></td>
+                                <td><c:out value="${user.email}" /></td>
+                                <td>Delete Edit Show</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
                 <!-- Content Row -->
 
 

@@ -1,24 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: meblo
-  Date: 23.02.2023
-  Time: 17:27
+  Date: 24.02.2023
+  Time: 15:58
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <html>
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SB Admin 2 - Dashboard</title>
-
+    <title>addToList</title>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -130,25 +126,22 @@
                     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
-                <div align="center">
-                    <table border="1" cellpadding="5">
-                        <caption><h2>List of users</h2></caption>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Action</th>
-                        </tr>
-                        <c:forEach var="user" items="${listUsers.rows}">
-                            <tr>
-                                <td><c:out value="${user.id}" /></td>
-                                <td><c:out value="${user.name}" /></td>
-                                <td><c:out value="${user.email}" /></td>
-                                <td>Delete Edit Show</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </div>
+                <form action="addToList" method="post">
+                    <div class="form-group">
+                        <label for="userName">Username</label>
+                        <input type="text" class="form-control" id="userName" name="userName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name ="email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
                 <!-- Content Row -->
 
 
@@ -221,8 +214,5 @@
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
-
-
-
 </body>
 </html>
