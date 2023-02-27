@@ -127,12 +127,11 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    <h1 class="h3 mb-0 text-gray-800"> User lists</h1>
+                    <a href="http://localhost:8080/web_war_exploded/user/addToList" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Add user</a>
                 </div>
                 <div align="center">
                     <table class="table">
-                        <h1>List of users</h1>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>

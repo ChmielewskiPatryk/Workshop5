@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 @WebServlet("/user/addToList")
-public class addToList extends HttpServlet {
+public class AddToList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/users/addToList.jsp").forward(req, resp);
@@ -26,7 +26,7 @@ public class addToList extends HttpServlet {
         user.setUserName(userName);
         user.setEmail(email);
         user.setPassword(password);
-        userDao.creat(user);
+        userDao.create(user);
         resp.sendRedirect(req.getContextPath() + "/user/list");
     }
 }

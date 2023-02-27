@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: meblo
-  Date: 24.02.2023
-  Time: 15:58
+  Date: 26.02.2023
+  Time: 12:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>addToList</title>
+    <title>editUser</title>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -23,7 +23,6 @@
 
     <!-- Custom styles for this template-->
     <link href="<c:url value="/theme/css/sb-admin-2.css"/>" rel="stylesheet">
-
 </head>
 <body id="page-top" class="sidebar-toggled">
 
@@ -123,17 +122,20 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Add user</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Edit user</h1>
                     <a href="http://localhost:8080/web_war_exploded/user/list" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> User lists</a>
                 </div>
-                <form action="addToList" method="post">
-                    <div class="form-group">
+                <form action="edit" method="post">
+                    <label>
+                    <input type="hidden" value="${user.id}" id="id" name="id">
+                    </label>
+                        <div class="form-group">
                         <label for="userName">Username</label>
-                        <input type="text" class="form-control" id="userName" name="userName">
+                        <input type="text" class="form-control" id="userName" name="userName" value="${user.userName}">
                     </div>
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name ="email">
+                        <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name ="email" value="${user.email}">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
@@ -214,5 +216,6 @@
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
+
 </body>
 </html>

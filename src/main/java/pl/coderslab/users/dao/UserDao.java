@@ -10,11 +10,11 @@ import java.util.Arrays;
 public class UserDao {
     private static final String CREATE_USER_QUERY = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
     private static final String READ_USER_QUERY = "SELECT * FROM users WHERE id = ?";
-    private static final String UPDATE_USER_QUERY = "UPADTE users SET username = ?, emial = ?, password = ? where id = ?";
+    private static final String UPDATE_USER_QUERY = "UPDATE users SET username = ?, email = ?, password = ? where id = ?";
     private static final String DELETE_USER_QUERY = "DELETE  FROM users WHERE id = ?";
     private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM users";
 
-    public User creat (User user) {
+    public User create (User user) {
         try(Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, user.getUserName());
